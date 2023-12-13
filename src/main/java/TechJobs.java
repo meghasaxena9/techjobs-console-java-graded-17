@@ -70,7 +70,7 @@ public class TechJobs {
         }
     }
 
-    // ﻿Returns the key of the selected item from the choices Dictionary
+    // Returns the key of the selected item from the choices Dictionary
     private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
 
         int choiceIdx = -1;
@@ -119,7 +119,25 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        HashMap<String, String> jobs = new HashMap<>();
 
-        System.out.println("printJobs is not implemented yet");
+   //     System.out.println(someJobs);
+        if (!someJobs.isEmpty() && someJobs != null) {
+
+    //        System.out.println("*****");
+            for (int i = 0; i < someJobs.size(); i++) {
+                jobs = someJobs.get(i);
+                //      System.out.println(jobs.keySet());
+                System.out.println("\n*****");
+                for (Map.Entry<String, String> item : jobs.entrySet()) {
+                    System.out.println(item.getKey() + ": " + item.getValue());
+                }
+                System.out.println("*****");
+            }
+            //     System.out.println("printJobs is not implemented yet");
+        } else {
+            System.out.print("No Results");
+        }
+     //   return;
     }
 }
